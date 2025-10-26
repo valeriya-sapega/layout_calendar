@@ -6,22 +6,18 @@
   flex-flow: row wrap;
   gap: $gap;
 
-  &--start-day {
-    @each $day, $margin in $days-margin {
-      &-#{$day} {
-        & .calendar__day:first-child {
-          margin-left: $margin;
-        }
+  @each $day, $margin in $days-margin {
+    &--start-day-#{$day} {
+      &__day:first-child {
+        margin-left: $margin;
       }
     }
   }
 
-  &--month-length {
-    @for $i from 1 through 31 {
-      &-#{$i} {
-        & .calendar__day:nth-child(n + #{$i + 1}) {
-          display: none;
-        }
+  @for $i from 1 through 31 {
+    &--month-length-#{$i} {
+      &__day:nth-child(n + #{$i + 1}) {
+        display: none;
       }
     }
   }
@@ -40,7 +36,7 @@
         content: '#{$i}';
         display: block;
         font-size: $font-size-day-number;
-        line-height: $height - 1px;
+        line-height: 98px;
         text-align: center;
       }
     }
