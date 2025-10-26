@@ -8,7 +8,7 @@
 
   @each $day, $margin in $days-margin {
     &--start-day-#{$day} {
-      &__day:first-child {
+      .calendar__day:first-child {
         margin-left: $margin;
       }
     }
